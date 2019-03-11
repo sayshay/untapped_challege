@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_03_11_140727) do
     t.string "height"
     t.float "weight"
     t.string "position"
-    t.string "class"
     t.bigint "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

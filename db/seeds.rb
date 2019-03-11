@@ -5,3 +5,149 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+def create_acc_conf
+  Conference.create(
+    name: 'Atlantic Coast Conference',
+    short_name: 'ACC'
+  )
+end
+
+def create_teams
+  conference = create_acc_conf
+  @teams.each do |team|
+    Team.create!(**team, conference: conference)
+  end
+end
+
+def add_teams_players
+  duke = Team.find_by(name: 'Duke')
+  unc = Team.find_by(name: 'North Carolina')
+  virginia = Team.find_by(name: 'Virginia')
+
+  @duke_players.each { |player| Player.create!(**player, team: duke) }
+
+  @unc_players.each { |player| Player.create!(**player, team: unc) }
+
+  @virginia_players.each { |player| Player.create!(**player, team: virginia) }
+end
+
+@teams = [
+  {
+    name: 'Duke',
+    mascot: 'Blue Devils',
+    coach: 'Mike Krzyzewski',
+    wins: 26,
+    losses: 5
+  },
+  {
+    name: 'North Carolina',
+    mascot: 'Tar Heels',
+    coach: 'Roy Williams',
+    wins: 26,
+    losses: 5
+  },
+  {
+    name: 'Virginia',
+    mascot: 'Cavaliers',
+    coach: 'Tony Bennett',
+    wins: 28,
+    losses: 2
+  }
+]
+
+@duke_players = [
+  {
+    jersey_number: 1,
+    name: "Zion Williamson",
+    height: "6-7",
+    weight: 275,
+    position: "Center"
+  },
+  {
+    jersey_number: 5,
+    name: "RJ Barrett",
+    height: "6-7",
+    weight: 202,
+    position: "Forward"
+  },
+  {
+    jersey_number: 2,
+    name: "Cam Reddish",
+    height: "6-8",
+    weight: 218.0,
+    position: "Forward"
+  },
+  {
+    jersey_number: 3,
+    name: "Tre Jones",
+    height: "6-2",
+    weight: 183,
+    position: "Guard"
+  }
+]
+
+@virginia_players = [
+  {
+    jersey_number: 33,
+    name: "Jack Salt",
+    height: "6-10",
+    weight: 250,
+    position: "Center"
+  },
+  {
+    jersey_number: 5,
+    name: "Kyle Guy",
+    height: "6-2",
+    weight: 175,
+    position: "Guard"
+  },
+  {
+    jersey_number: 22,
+    name: "Francisco Caffaro",
+    height: "7-0",
+    weight: 233,
+    position: "Center"
+  },
+  {
+    jersey_number: 12,
+    name: "De'Andre Hunter",
+    height: "6-7",
+    weight: 225,
+    position: "Guard"
+  }
+]
+
+@unc_players = [
+  {
+    jersey_number: 2,
+    name: "Coby White",
+    height: "6-5",
+    weight: 185,
+    position: "Guard"
+  },
+  {
+    jersey_number: 32,
+    name: "Luke Maye",
+    height: "6-8",
+    weight: 240,
+    position: "Forward"
+  },
+  {
+    jersey_number: 5,
+    name: "Nassir Little",
+    height: "6-6",
+    weight: 220,
+    position: "Forward"
+  },
+  {
+    jersey_number: 13,
+    name: "Cameron Johnson",
+    height: "6-9",
+    weight: 210,
+    position: "Guard"
+  }
+]
+
+create_teams
+add_teams_players
