@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_03_11_140727) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "conferences", force: :cascade do |t|
     t.string "name"
     t.string "short_name"
@@ -28,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_140727) do
     t.string "height"
     t.float "weight"
     t.string "position"
-    t.bigint "team_id"
+    t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_players_on_team_id"
@@ -40,12 +37,10 @@ ActiveRecord::Schema.define(version: 2019_03_11_140727) do
     t.string "coach"
     t.integer "wins"
     t.integer "losses"
-    t.bigint "conference_id"
+    t.integer "conference_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conference_id"], name: "index_teams_on_conference_id"
   end
 
-  add_foreign_key "players", "teams"
-  add_foreign_key "teams", "conferences"
 end
