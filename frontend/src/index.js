@@ -1,6 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./styles/app.scss";
-import App from "./App";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './styles/app.scss'
+import { DefaultTheme } from '@untappd/components'
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <DefaultTheme>
+    <App />
+  </DefaultTheme>,
+  document.getElementById('root'),
+)
