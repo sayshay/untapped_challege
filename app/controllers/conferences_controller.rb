@@ -1,8 +1,17 @@
 class ConferencesController < ApplicationController
-  # GET /players
-  def index
-    @players = Conference.all
+  # Hardcoded to get just the first Conference's data
+  def show
+    conference = Conference.first
+    teams = conference.teams
 
-    render json: @players
+    data = {
+      conference: {
+        name: conference.name,
+        short_name: conference.short_name
+      },
+      teams: teams
+    }
+
+    render json: data
   end
 end
