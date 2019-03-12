@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-acc:
-  name: Atlantic Coast Conference
-  short_name: ACC
-
-b1g:
-  name: Big 10
-  short_name: B1G
