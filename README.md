@@ -131,6 +131,4 @@ edits; reference how `styled-system` handles this.
 ## Submitting your project
 
 Once you're ready to submit your assessment, please open a Pull Request against
-this repository for us to evaluate. If needed, add any additional instructions
-or comments to the very top of this README file. Expect to discuss your
-solutions and additions to this assessment.
+this repository for us to evaluate.
