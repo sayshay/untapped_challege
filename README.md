@@ -66,7 +66,7 @@ edits; reference how `styled-system` handles this.
 
 - Teams
 
-  - [ ] Loop over & output the data for each Team within the confernence
+  - [ ] Loop over & output the data for each Team within the conference
   - [ ] The `wins` & `losses` for each team should be input fields
   - [ ] Add functionality to allow `wins` & `losses` to be updated & saved to
         the Rails database
