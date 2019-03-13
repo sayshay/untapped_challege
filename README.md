@@ -5,19 +5,17 @@
 - Ruby 2.4+
 - Node 8+
 - Bundler gem
+- Yarn
 
 ## Project Setup
 
 Clone this repo locally, and from the top-level directory run:
 
-- `bin/setup`
-  - installs backend dependencies (Rails, etc.)
-  - create, migrate, and seed the database (SQLite)
-
-Now `cd` into the `frontend` directory and run:
-
 - `yarn install`
-  - installs frontend dependencies (React, etc.)
+- `yarn setup`
+  - installs backend & frontend dependencies (Rails, React, etc.)
+  - create, migrate, and seed the database (SQLite)
+  - installs dependencies (React, etc.)
 
 # Running the Project
 
