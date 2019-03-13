@@ -6,30 +6,39 @@
 - Node 8+
 - Bundler gem
 
-# Setting the Project
+## Project Setup
 
-- running `yarn setup` will do the following:
-  - install backend dependencies (Rails, etc.)
-  - install frontend dependencies (React, etc.)
+Clone this repo locally, and from the top-level directory run:
+
+- `bin/setup`
+  - installs backend dependencies (Rails, etc.)
   - create, migrate, and seed the database (SQLite)
+
+Now `cd` into the `frontend` directory and run:
+
+- `yarn install`
+  - installs frontend dependencies (React, etc.)
 
 # Running the Project
 
-- running `yarn start` will boot the Rails API & the React frontend
-- The root directory contains the Rails API (runs on `localhost:5000`)
-- The React app lives within the `frontend` folder. (runs on `localhost:3000`)
+- Running `yarn start` will boot the Rails API & the React frontend
+- Navigating to `localhost:3000` should display the homepage with starting point
+  data - The root directory contains the Rails API (running at `localhost:5000`)
+- The React app lives within the `frontend` folder. (running at `localhost:3000`)
 - A simple Rspec test has been created for the single existing endpoint. Run the
   test suite but running the `rspec` command in your terminal.
 
 _NOTE:_ Make sure you're in the `frontend` folder when adding any additional packages
 
-# Task at hand:
+## Before You Start:
 
 - This project has been setup with 3 ActiveRecord models: `Conference`, `Team`,
   and `Player`. A `Player` belongs to a `Team`, a `Team` belongs to a `Conference`,
   and a `Conference` `has_many` `Teams`.
 
-- Additionally, a root endpoint (`Conferences#show`) of our Rails API has been defined to return the data which will be seeded on the initial setup of the project (e.g. running `yarn setup`).
+- Additionally, a root endpoint (`Conferences#show`) of the Rails API has been
+  defined & setup to return the data which was seeded on the initial setup
+  of the project (e.g. running `yarn setup`).
 
 ### Tasks
 
@@ -42,6 +51,8 @@ _NOTE:_ Make sure you're in the `frontend` folder when adding any additional pac
       be a `boolean` data type with default value of `false`
 - [ ] add the ability to change the `starter` status of a player from
       `false` to `true`
+
+--- Figure 1 ---
 
 ```
 - Conference
