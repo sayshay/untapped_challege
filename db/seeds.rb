@@ -23,13 +23,11 @@ end
 def add_teams_players
   duke = Team.find_by(name: 'Duke')
   unc = Team.find_by(name: 'North Carolina')
-  virginia = Team.find_by(name: 'Virginia')
+  state = Team.find_by(name: 'NC State')
 
   @duke_players.each { |player| Player.create!(**player, team: duke) }
-
   @unc_players.each { |player| Player.create!(**player, team: unc) }
-
-  @virginia_players.each { |player| Player.create!(**player, team: virginia) }
+  @state_players.each { |player| Player.create!(**player, team: state) }
 end
 
 @teams = [
@@ -48,9 +46,9 @@ end
     losses: 5
   },
   {
-    name: 'Virginia',
-    mascot: 'Cavaliers',
-    coach: 'Tony Bennett',
+    name: 'NC State',
+    mascot: 'Wolfpack',
+    coach: 'Kevin Keatts',
     wins: 28,
     losses: 2
   }
@@ -87,34 +85,34 @@ end
   }
 ]
 
-@virginia_players = [
+@state_players = [
   {
-    jersey_number: 33,
-    name: "Jack Salt",
-    height: "6-10",
-    weight: 250,
-    position: "Center"
+    jersey_number: 55,
+    name: "Blake Harris",
+    height: "6-3",
+    weight: 190,
+    position: "Guard"
   },
   {
-    jersey_number: 5,
-    name: "Kyle Guy",
-    height: "6-2",
+    jersey_number: 4,
+    name: "Jericole Hellems ",
+    height: "6-7",
+    weight: 198,
+    position: "Forward"
+  },
+  {
+    jersey_number: 11,
+    name: "Markell Johnson",
+    height: "6-1",
     weight: 175,
     position: "Guard"
   },
   {
-    jersey_number: 22,
-    name: "Francisco Caffaro",
-    height: "7-0",
-    weight: 233,
-    position: "Center"
-  },
-  {
-    jersey_number: 12,
-    name: "De'Andre Hunter",
-    height: "6-7",
-    weight: 225,
-    position: "Guard"
+    jersey_number: 1,
+    name: "Sacha Killeya-Jones",
+    height: "6-11",
+    weight: 220,
+    position: "Forward"
   }
 ]
 
