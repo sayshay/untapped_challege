@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Box, Button, Card } from '@untappd/components'
 
 const API = 'http://localhost:5000'
 
@@ -34,20 +33,14 @@ class App extends Component {
     }
 
     return (
-      <Box className="App" mx={8}>
-        <Card>
-          <Card.Header>{conference.name}</Card.Header>
-          <Card.Content>
-            <Button color="red">Testing</Button>
-
-            {teams.map(team => (
-              <li key={team.id}>
-                {team.name} {team.mascot}
-              </li>
-            ))}
-          </Card.Content>
-        </Card>
-      </Box>
+      <div className="App">
+        <h1>{conference.name}</h1>
+        {teams.map(team => (
+          <li key={team.id}>
+            {team.name} {team.mascot}
+          </li>
+        ))}
+      </div>
     )
   }
 }
