@@ -44,10 +44,11 @@ _NOTE:_ Make sure you're in the `frontend` folder when adding any additional pac
 
 Our [custom React component library](https://design.business.untappd.com/) has
 been added to this project so that you don't get too caught up on the design.
-These components are based on [styled-system](https://styled-system.com/getting-started)
+This component library is based on [styled-system](https://styled-system.com/getting-started)
 and [styled-components](https://www.styled-components.com/docs/), so you can
 reference those docs if you need clarification. You shouldn't need to add much,
-if any, custom styling when using this.
+if any, custom styling when using this. Margins & paddings would be the main
+edits; reference how `styled-system` handles this.
 
 ### Design Specs: (reference Figure 1)
 
