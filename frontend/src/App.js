@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Box, Button, Card, Heading } from '@untappd/components'
 
 const API = 'http://localhost:5000'
 
@@ -33,14 +34,24 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <h1>{conference.name}</h1>
+      <Box className="App" mx={8}>
+        <Heading uppercase>{conference.name}</Heading>
+
         {teams.map(team => (
-          <li key={team.id}>
-            {team.name} {team.mascot}
-          </li>
+          <Card key={team.id} mb={3}>
+            <Card.Header>
+              <Heading>
+                {team.name} {team.mascot}
+              </Heading>
+            </Card.Header>
+            <Card.Content>
+              <li>Player's</li>
+              <li>go</li>
+              <li>here</li>
+            </Card.Content>
+          </Card>
         ))}
-      </div>
+      </Box>
     )
   }
 }
