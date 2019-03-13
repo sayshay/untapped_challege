@@ -34,8 +34,10 @@ class App extends Component {
     }
 
     return (
-      <Box className="App" mx={8}>
-        <Heading uppercase>{conference.name}</Heading>
+      <Box className="App" mx={12} my={5}>
+        <Heading>
+          {conference.short_name} ({conference.name})
+        </Heading>
 
         {teams.map(team => (
           <Card key={team.id} mb={3}>

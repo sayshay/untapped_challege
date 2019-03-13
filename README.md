@@ -40,43 +40,79 @@ _NOTE:_ Make sure you're in the `frontend` folder when adding any additional pac
   defined & setup to return the data which was seeded on the initial setup
   of the project (e.g. running `yarn setup`).
 
+### Design
+
+Our [custom React component library](https://design.business.untappd.com/) has
+been added to this project so that you don't get too caught up on the design.
+These components are based on [styled-system](https://styled-system.com/getting-started)
+and [styled-components](https://www.styled-components.com/docs/), so you can
+reference those docs if you need clarification. You shouldn't need to add much,
+if any, custom styling when using this.
+
+### Design Specs: (reference Figure 1)
+
+- [ ] Each team should be contained within a `Card` component
+- [ ] `Card.Header` should contain Team name, mascot, coach, wins, & losses
+  - [ ] Use `TextInput`'s for `wins` & `losses` values
+- [ ] The `Card.Content` should contain a `List` of the players (should hidden
+      by default - see tasks below)
+- [ ] Each player should be contained in a `ListItem` component
+- [ ] Use `Box`/`Flex` components to layout the player attributes
+- [ ] A player's `jersey_number` will be editable, so use a `TextInput`
+      component for that attribute. Other attributes can be
+
 ### Tasks
 
-- [ ] loop over & output the data for each Team within the confernence
-- [ ] the `wins` & `losses` for each team should be input fields of which are
-      updatable values
-- [ ] clicking on a team should toggle open a hidden container that reveals
-      that team's players and the attributes for each player
-- [ ] add a new attribute to the `Player` model called `starter`. This should
-      be a `boolean` data type with default value of `false`
-- [ ] add the ability to change the `starter` status of a player from
-      `false` to `true`
+- Teams
+
+  - [ ] Loop over & output the data for each Team within the confernence
+  - [ ] The `wins` & `losses` for each team should be input fields
+  - [ ] Add functionality to allow `wins` & `losses` to be updated & saved to
+        the Rails database
+
+- Players
+  - [ ] Add functionality to toggle open the `Card.Content` component when the
+        Team (`Card.Header`) is clicked
+    - [ ] Additionally, create an API endpoint to return the players and their
+          attributes when the Team is clicked
+  - [ ] Update the Rails API to allow the ability to update the `jersey_number`
+        for an instance of a `Player`.
+    - [ ] On the frontend, editing this attribute should happen 'in-line' and
+          save the edit on the backend automatically
+  - [ ] Add a new attribute to the `Player` model called `starter`. This should
+        be a `boolean` data type with a default value of `false`
+  - [ ] Add the ability to change the `starter` status of a player from
+        `false` to `true`
 
 --- Figure 1 ---
 
 ```
-- Conference
-  - Team ===== Wins: [  ] Losses: [  ]
-    - Player Name
-      - (other player attributes)
-    - Player Name
-      - (other player attributes)
-    - Player Name
-      - (other player attributes)
-  - Team ===== Wins: [  ] Losses: [  ]
-    - Player Name
-      - (other player attributes)
-    - Player Name
-      - (other player attributes)
-    - Player Name
-      - (other player attributes)
+- Conference <Heading>
+  <Card>
+  - Team ===== Wins: [  ] Losses: [  ] <Card.Header>
+    <List> (initially hidden)
+    - Player Name <ListItem>
+      - (other player attributes) <Box> / <Flex>
+    - Player Name <ListItem>
+      - (other player attributes) <Box> / <Flex>
+    - Player Name <ListItem>
+      - (other player attributes) <Box> / <Flex>
+
+  <Card>
+  - Team ===== Wins: [  ] Losses: [  ] <Card.Header>
+    <List> (initially hidden)
+    - Player Name <ListItem>
+      - (other player attributes) <Box> / <Flex>
+    - Player Name <ListItem>
+      - (other player attributes) <Box> / <Flex>
+    - Player Name <ListItem>
+      - (other player attributes) <Box> / <Flex>
 ```
 
 ## Stretch Goals
 
 - [ ] add the ability to create a new team for the conference
 - [ ] add testing for any of the frontend or backend changes that you've made
-- [ ] implement a react component library such as [Segment Evergreen](https://evergreen.segment.com/components/)
 
 ## Additional Notes
 
@@ -85,10 +121,15 @@ _NOTE:_ Make sure you're in the `frontend` folder when adding any additional pac
   added will hurt you.
 - Don't worry if some of the instructions above seem a little vague. Read between
   the lines as much as possible; make assumptions.
-- We're only looking at the functionality of the items in the _Tasks_
-  list.
-- Don't get too caught up on the design; you won't lose any credit for not
-  having any design.
+- We're mainly looking at the functionality of the items in the _Tasks_
+  list, so don't get too caught up in other areas.
 - Please use your best judgement before reaching out with questions, as it's
   very likely that any questions you have won't be of any significance in regards
   to what we're looking for in this assessment.
+
+## Submitting your project
+
+Once you're ready to submit your assessment, please open a Pull Request against
+this repository for us to evaluate. If needed, add any additional instructions
+or comments to the very top of this README file. Expect to discuss your
+solutions and additions to this assessment.
