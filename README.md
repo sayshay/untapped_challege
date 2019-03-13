@@ -40,7 +40,7 @@ _NOTE:_ Make sure you're in the `frontend` folder when adding any additional pac
   defined & setup to return the data which was seeded on the initial setup
   of the project (e.g. running `yarn setup`).
 
-### Design
+### Design (Docs for component library: https://github.com/nextglass/untappd-components)
 
 Our [custom React component library](https://design.business.untappd.com/) has
 been added to this project so that you don't get too caught up on the design.
