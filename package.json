@@ -10,6 +10,7 @@
     "start": "concurrently -k --kill-others 'yarn start:js' 'yarn start:rails'",
     "setup:server": "bin/setup",
     "setup:js": "yarn install --cwd frontend",
+    "setup:fresh": "bin/rails tmp:clear && rm -r ./frontend/node_modules && yarn setup",
     "setup": "yarn setup:js && yarn setup:server",
     "precommit": "lint-staged"
   },
