@@ -11,6 +11,6 @@ class PlayersController < ApplicationController
   		render json: @player
   	else
     	render json: @player.errors
-    end  	
+    end
   end
 end

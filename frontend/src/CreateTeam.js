@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {
-  Box,
-  ListItem,
-  TextInput,
-  FormLabel,
-  Button,
-} from '@untappd/components'
+import { TextInput, FormLabel, Button } from '@untappd/components'
 
 const API = 'http://localhost:5000'
 
@@ -35,7 +29,6 @@ class CreateTeam extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-    const team = this.state
     axios
       .post(`${API}/conferences/${this.props.conference_id}/teams/`, this.state)
       .then(res => {

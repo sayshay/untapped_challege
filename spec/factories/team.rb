@@ -4,5 +4,6 @@ FactoryBot.define do
   factory :team do
     trait :with_players do
     end
+    conference
   end
 end
