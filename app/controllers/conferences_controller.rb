@@ -6,6 +6,7 @@ class ConferencesController < ApplicationController
 
     data = {
       conference: {
+        id: conference.id,
         name: conference.name,
         short_name: conference.short_name
       },
